@@ -9,7 +9,7 @@ _________________________
 
     ```npm install```
 
-- Ir no arquivo app.js e mudar as credenciais de host, user, password e database para as que você desejar (linhas 13 a 16):
+- Ir no arquivo app.js e mudar as credenciais de host, user, password e database para as que você normalmente usa para conectar ao MYSQL (linhas 13 a 16):
 
 ```
 host: process.env.DATABASE_HOST,
