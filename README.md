@@ -20,7 +20,7 @@ database: process.env.DATABASE
 
 - Feito isso, executar o comando:
 
-     ```npm start```.
+     ```npm start```
 
 Se tudo foi feito corretamente, aparecerá no terminal a seguinte mensagem: 
 
