@@ -9,6 +9,7 @@ pdfMake.vfs = vfsFonts.pdfMake.vfs;
 router.post('/pdf', (req, res, next) =>{
     //res.send('PDF');
 
+    const nomePaciente = req.body.nomePaciente;
     const dataAtend = req.body.dataAtend;
     const anamnese = req.body.anamnese;
     const recordatorio = req.body.recordatorio;
@@ -16,6 +17,7 @@ router.post('/pdf', (req, res, next) =>{
 
     var documentDefinition = {
         content: [
+            `Nome do Paciente: ${nomePaciente}`,
             `Data de atendimento: ${dataAtend}`,
             `Anamnese: ${anamnese}`,
             `Recordatório: ${recordatorio}`,
@@ -28,7 +30,7 @@ router.post('/pdf', (req, res, next) =>{
         res.writeHead(200,
             {
                 'Content-Type': 'application/pdf',
-                'Content-Disposition': 'attachment;filename="filename.pdf"'
+                'Content-Disposition': 'attachment;filename="prontuario.pdf"'
             });
             
             const download = Buffer.from(data.toString('utf-8'), 'base64');

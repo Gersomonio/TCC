@@ -13,12 +13,19 @@
 <body class="bg">
     {{#each rows}}
     <div class="container pdfgen-container">
-        <h2 class="text-center">{{this.nome}}</h2><hr>
+        <h2 class="text-center">Gerar Prontuário</h2>
+        <hr>
         <form method="POST" action="../pdfMake\pdf" id="form">
-            <div class="col-md-4 float-sm-right" style="left: 15px">
-            <label for="data">Data de Atendimento</label>
-            <input type="date" class="form-control" id="data" name="dataAtend">
-        </div>
+            <div class="col-md-4 float-sm-left">
+                <label for="nome">Nome do Paciente</label>
+                <input type="text" class="form-control" id="nome" value="{{this.nome}}" maxlength="100"
+                    name="nomePaciente">
+            </div>
+            <div class="col-md-4 float-sm-right">
+                <label for="data">Data de Atendimento</label>
+                <input type="date" class="form-control" id="data" name="dataAtend">
+            </div>
+            <br><br><br><br>
             <div class="input-group">
                 <span class="input-group-text">Anamnese</span>
                 <textarea class="form-control" id="anamnese" name="anamnese" style="height: 100px;"></textarea>
@@ -33,7 +40,8 @@
             <br>
             <div class="input-group">
                 <span class="input-group-text">Plano Alimentar</span>
-                <textarea class="form-control" id="planoalimentar" name="planoalimentar" style="height: 100px;" ></textarea>
+                <textarea class="form-control" id="planoalimentar" name="planoalimentar"
+                    style="height: 100px;"></textarea>
             </div>
             <br>
             <br>
@@ -51,4 +59,5 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
