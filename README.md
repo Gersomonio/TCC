@@ -22,7 +22,7 @@ Para executar a aplicação: <br>
 
 Se tudo foi feito corretamente, aparecerá no terminal a seguinte mensagem: 
 
-````
+```
 Servidor iniciado na porta 3333.
 Conectado ao MYSQL!
-````
+```
