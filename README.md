@@ -3,22 +3,24 @@
 ### Trabalho de conclusão de curso em Desenvolvimento de Sistemas na ETEC Jd. Angela
 
 _________________________
-Para executar a aplicação: <br>
+### Para executar a aplicação:
 
 - Após baixar os arquivos, executar no terminal:
 
-```npm install```
+    ```npm install```
 
-- Ir no arquivo app.js e mudar as credenciais de host, user, password e database (linhas 13 a 16):
+- Ir no arquivo app.js e mudar as credenciais de host, user, password e database para as que você desejar (linhas 13 a 16):
 
 ```
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE
+host: process.env.DATABASE_HOST,
+user: process.env.DATABASE_USER,
+password: process.env.DATABASE_PASSWORD,
+database: process.env.DATABASE
 ```
 
-- Feito isso, executar o comando ```npm start```.
+- Feito isso, executar o comando:
+
+     ```npm start```.
 
 Se tudo foi feito corretamente, aparecerá no terminal a seguinte mensagem: 
 
