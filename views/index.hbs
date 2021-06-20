@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style/style.css"> <!--- o / antes de style significa que o arquivo será buscado dentro da pasta public -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> <!-- Bootstrap adicionado -->
+        <title>Health Life - Login</title>
+    </head>
+<body>
+<section class="container-fluid bg">
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-3">
+            <form action="/auth/login" method="POST" class="form-container">
+                <div class="d-flex justify-content-center align-items-center">
+                        <img src="../img/healthlife50.png"
+                            class="img-fluid d-flex justify-content-center align-items-center" id="imgLogo">
+                    </div>
+                <hr>
+                <div class="form-group">
+                    <label for="campoEmail">Usuário</label>
+                    <input type="text" name="email" class="form-control" id="campoEmail" placeholder="Login do Usuário"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="campoLogin">Senha</label>
+                    <input type="password" name="password" class="form-control" id="campoLogin" placeholder="Senha"
+                        required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        {{#if message }} <!-- É assim que se usa IF com handlebars. Retorna TRUE ou FALSE -->
+            <p class="alert alert-danger mt-4">{{message}}</h4> <!-- Se houver uma mensagem, mostre-a -->
+        {{/if}} <!-- Também se fecha -->
+            </form>    
+        </section>
+    </section>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</body>
+</html>

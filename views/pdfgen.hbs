@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style/style.css">
+    <title>Gerador de PDF</title>
+</head>
+
+<body class="bg">
+    {{#each rows}}
+    <div class="container pdfgen-container">
+        <h2 class="text-center">{{this.nome}}</h2><hr>
+        <form method="POST" action="../pdfMake\pdf" id="form">
+            <div class="col-md-4 float-sm-right" style="left: 15px">
+            <label for="data">Data de Atendimento</label>
+            <input type="date" class="form-control" id="data" name="dataAtend">
+        </div>
+            <div class="input-group">
+                <span class="input-group-text">Anamnese</span>
+                <textarea class="form-control" id="anamnese" name="anamnese" style="height: 100px;"></textarea>
+            </div>
+            <br>
+            <br>
+            <div class="input-group">
+                <span class="input-group-text">Recordatório</span>
+                <textarea class="form-control" id="recordatorio" name="recordatorio" style="height: 100px;"></textarea>
+            </div>
+            <br>
+            <br>
+            <div class="input-group">
+                <span class="input-group-text">Plano Alimentar</span>
+                <textarea class="form-control" id="planoalimentar" name="planoalimentar" style="height: 100px;" ></textarea>
+            </div>
+            <br>
+            <br>
+            <div class="d-grid gap-2">
+                <button class="btn btn-success btn-block" id="button" class="btn btn-primary">Gerar PDF</button>
+                <a href="/tabelaHorarios" class="btn btn-danger btn-block">Voltar</a>
+            </div>
+        </form>
+    </div>
+    {{/each}}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+</html>

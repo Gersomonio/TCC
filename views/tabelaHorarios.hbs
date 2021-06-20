@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Health Life - Gerenciar Clientes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="/style/style.css">
+
+    <script>
+        function pesquisarTabela() {
+            // Declaração de variáveis
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("cInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tabela");
+            tr = table.getElementsByTagName("tr");
+
+            // Pesquisar através de todas as rows, escondendo as que não correspondem a pesquisa.
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg">
+
+    <section class="container-fluid">
+            <h1 class="text-center" style="padding-top: 20px;">Tabela de Horários de Clientes</h1>
+            <div class="container-fluid" style="padding-top: 55px">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="cInput" onkeyup="pesquisarTabela()"
+                            placeholder="Pesquise por nomes">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <a href="/home" class="btn btn-danger btn-block">Voltar</a>
+                    </div>
+                </div>
+                <table id="tabela" class="table table-striped table-light table-hover table-bordered tabela-custom">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome Completo</th>
+                            <th scope="col">Horário de Atendimento</th>
+                            <th scope="col" class="text-center">Situação</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each rows}}
+                        <tr>
+                            <th scope="row">{{this.id}}</th>
+                            <td>{{this.nome}}</td>
+                            <td>{{this.dataeHora}}</td>
+                             <td class="text-center">
+                                <a href="/pdfgen/{{this.id}}" type="button" class="btn btn-success btn-small"><i class="bi bi-clipboard-data"></i> Prontuário</a>
+                                <a href="/editarConsulta/{{this.id}}" type="button" class="btn btn-warning btn-small"><i class="bi bi-pencil"></i> Alterar</a>
+                                <a href="/delete/{{this.id}}" type="button" class="btn btn-info btn-small"><i class="bi bi-calendar2-check"></i> Atendido</a>
+                                <a href="/delete/{{this.id}}" type="button" class="btn btn-danger btn-small"><i class="bi bi-person-x"></i> Cancelar</a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    
+                    </tbody>
+                </table>
+            </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

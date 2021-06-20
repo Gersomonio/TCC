@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>
+        Health Life - Cadastro de Paciente
+    </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style/style.css">
+</head>
+
+<body class="jumbotron">
+    {{#if message}}
+    <p class="alert h6 text-center alert-success mt-4">{{ message }}</p>
+    {{/if}}
+    {{#each rows}}
+    <form action="/editarCliente/{{this.id}}" method="POST" class="container-fluid">
+        <p class="text-center h5 alert alert-warning">Formulário de Atualização do cliente: {{this.nome}}</p>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="nome">Nome do Paciente</label>
+                <input type="text" class="form-control" id="nome" value="{{this.nome}}" placeholder="Nome Completo" maxlength="100" name="nome">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="rg">RG do Paciente</label>
+                <input type="text" class="form-control" id="rg" value="{{this.rg}}" name="rg" maxlength="20" placeholder="XX.XXX.XXX-X">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="cpf">CPF do Paciente</label>
+                <input type="text" class="form-control" id="cpf" value="{{this.cpf}}" name="cpf" maxlength="12" placeholder="XXXXXXXXX/XX">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="emailCliente">E-mail do Paciente</label>
+                <input type="email" class="form-control" id="emailCliente" value="{{this.emailCliente}}" placeholder="Paciente@email.com" name="emailCliente">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="telefone">Telefone do Paciente</label>
+                <input type="text" class="form-control" id="telefone" value="{{this.telefone}}" name="telefone" maxlength="15" placeholder="XX XXXX-XXXX">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="celular" name="celular">Celular do Paciente</label>
+                <input type="text" class="form-control" id="celular" value="{{this.celular}}" name="celular" maxlength="15" placeholder="XX XXXXX-XXXX">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="nascimento">Data de Nascimento</label>
+                <input type="date" class="form-control" id="nascimento" value="{{{this.nascimento}}}" name="nascimento">
+            </div>
+        </div>
+        <p>Sexo do Paciente</p>
+        <fieldset class="form-group">
+            <div class="row">
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="sexo" id="Masculino" value="Masculino">
+                  <label class="form-check-label" for="Masculino">
+                    Masculino
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="sexo" id="Feminino" value="Feminino">
+                  <label class="form-check-label" for="Feminino">
+                    Feminino
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                <label for="nomeDaRua">Nome da Rua</label>
+                <input type="text" class="form-control" id="nomeDaRua" value="{{this.nomeDaRua}}" placeholder="R. Feitiço da Vila" name="nomeDaRua">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="cep">CEP</label>
+                <input type="text" class="form-control" id="cep" value="{{this.cep}}" placeholder="XXXXX-XXX" name="cep" maxlength="10">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="numeroDaRua">Número da Rua</label>
+                <input type="number" class="form-control" id="numeroDaRua" value="{{this.numeroDaRua}}" placeholder="425" name="numeroDaRua" maxlength="8">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                <label for="complemento">Complemento</label>
+                <input type="text" class="form-control" id="complemento" value="{{this.complemento}}" name="complemento"
+                    placeholder="Apartamento, Bloco, Andar...">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="bairro">Bairro</label>
+                <input type="text" class="form-control" id="bairro" value="{{this.bairro}}" placeholder="Chácara Sta. Maria" name="bairro">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Atualizar</button>
+        <a href="/gerenciarClientes" class="btn btn-danger btn-block">Voltar</a>
+    </form>
+    {{/each}}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

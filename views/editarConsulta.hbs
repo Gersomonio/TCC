@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Health Life - Agendamento</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style/style.css">
+</head>
+<body class="bg">
+                {{#if message}}
+            <p class="alert text-center alert-success mt-4">{{message}}</p>
+            {{/if}}
+<section class="container-fluid">
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-3">
+            {{#each rows}}
+            <form action="/editarConsulta/{{this.id}}" method="POST" class="form-container">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="../img/healthlife50.png"
+                        class="img-fluid d-flex justify-content-center align-items-center" id="imgLogo">
+                </div>
+                <p class="text-center alert alert-warning">Atualizar agendamento de: {{this.nome}}</p>
+                <hr>
+                <div class="form-group">
+                    <label for="nome">Nome do Paciente</label>
+                    <input type="text" class="form-control" value="{{this.nome}}" id="nome" placeholder="" name="nome">
+                </div>
+                <div class="form-group">
+                    <label for="datahora">Data e Hora - Agendamento</label>
+                    <input type="datetime-local" value="{{this.dataeHora}}" class="form-control" id="datahora" name="datahora">
+                </div>
+                {{#if message}}
+                <p class="alert alert-danger mt-4">{{ message }}</p>
+                {{/if}}
+                <button type="submit" class="btn btn-success btn-block">Atualizar Agendamento</button>
+                <a href="/tabelaHorarios" class="btn btn-danger btn-block">Voltar</a>
+            </form>
+            {{/each}}
+        </section>
+    </section>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
