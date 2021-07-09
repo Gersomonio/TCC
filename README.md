@@ -9,10 +9,12 @@ __________
 [Gerson](https://github.com/Gersomonio) - Front-end + Back-end
 __________
 - ### Nossa experiência com o Projeto:
-O intuito de nosso projeto era realizar uma aplicação com tecnologias não ensinadas na instituição para que pudéssemos provar aos professores e a nós mesmos que conseguiriamos nos aprofundar em outras tecnologias com a lógica ensinada no curso (Thanks, Barth and Alex!).\
+O intuito de nosso projeto era realizar uma aplicação com tecnologias não ensinadas na instituição para que pudéssemos provar aos professores e a nós mesmos que conseguiriamos nos aprofundar em outras tecnologias com a lógica ensinada no curso (Thanks, Barth and Alex!).
+
+A ideia era fazer um sistema CRUD junto com um gerador de PDF para uma consulta nutricional.
+
 
 Nosso maior desafio foi aprender as tecnologias não ensinadas citadas anteriormente, tais como: [Javascript](https://www.javascript.com), [NodeJS](https://nodejs.org/en/), [Handlebars](https://handlebarsjs.com) e  [Bootstrap](https://getbootstrap.com) em conjunto com [Electron Framework](https://www.electronjs.org).
-__________
 
 ________
 ## A aplicação:
