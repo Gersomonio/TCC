@@ -14,7 +14,7 @@ O intuito de nosso projeto era realizar uma aplicação com tecnologias não ens
 A ideia era fazer um sistema CRUD junto com um gerador de PDF para uma consulta nutricional.
 
 
-Nosso maior desafio foi aprender as tecnologias não ensinadas citadas anteriormente, tais como: [Javascript](https://www.javascript.com), [NodeJS](https://nodejs.org/en/), [Handlebars](https://handlebarsjs.com) e  [Bootstrap](https://getbootstrap.com)
+Nosso maior desafio foi aprender as tecnologias não ensinadas citadas anteriormente, tais como: [Javascript](https://www.javascript.com), [NodeJS](https://nodejs.org/en/), [Handlebars](https://handlebarsjs.com) e  [Bootstrap](https://getbootstrap.com).
 
 ________
 ## A aplicação:
