@@ -1,6 +1,6 @@
 # Bem-vindo à documentação do nosso TCC!
 
-## Trabalho de conclusão de curso em Desenvolvimento de Sistemas na ETEC Jd. Angela.
+## Trabalho de conclusão de curso em Desenvolvimento de Sistemas na ETEC.
 __________
 ### Feito por:
 [Arnaldo](https://github.com/naldofranca86) - Front-end + ideias\
