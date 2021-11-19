@@ -5,7 +5,7 @@ __________
 ### Feito por:
 [Arnaldo](https://github.com/naldofranca86) - Front-end + ideias\
 [Emanoel](https://github.com/emanoteste) - Documentação + ideias\
-[Lucas Uriel](https://github.com/LucasUrie-stack) - Estruturação do Banco de Dados\
+[Lucas Uriel](https://github.com/Uriel-6l6) - Estruturação do Banco de Dados\
 [Gerson](https://github.com/Gersomonio) - Front-end + Back-end
 __________
 - ### Nossa experiência com o Projeto:
